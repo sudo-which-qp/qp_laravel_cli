@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"github.com/spf13/cobra"
+)
 
 func main() {
-	fmt.Println("hello world")
+	var rootCmd = &cobra.Command{
+		Use:   "qp_laravel",
+		Short: "QP Laravel CLI tool",
+	}
+
+	// Add commands from other files
+	rootCmd.AddCommand(createLaravelCmd())
+
+	rootCmd.Execute()
 }

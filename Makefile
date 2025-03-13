@@ -1,6 +1,6 @@
 .PHONY: build-binary
 build:
-	go build -o bin/main cmd/main.go
+	go build -o bin/qp_laravel cmd/*.go
 
 .PHONY: run-binary
 run:
@@ -12,4 +12,5 @@ clean-build:
 
 .PHONY: move-binary
 move:
-	mv bin/main /usr/local/bin/
+	@echo "This target requires sudo privileges"
+	sudo mv bin/qp_laravel /usr/local/bin/
